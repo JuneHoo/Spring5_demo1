@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    1. 配置对象创建-->
+    <bean id="user" class="com.atguigu.spring5.User" ></bean>
+
+<!--    2. set方法注入属性-->
+    <bean id="book" class="com.atguigu.spring5.Book" p:beanName="九阳神功" p:beanAuthor="无名氏">
+<!--        使用property完成属性注入
+            name表示属性名称
+            value表示需要注入的值
+-->
+<!--        <property name="beanName" value="易筋经"></property>-->
+<!--        <property name="beanAuthor" value="达摩老祖"></property>-->
+    </bean>
+<!--    3. 有参构造注入方式-->
+    <bean id="orders" class="com.atguigu.spring5.Orders">
+        <constructor-arg name="oname" value="电脑"></constructor-arg>
+        <constructor-arg name="address" value="China"></constructor-arg>
+    </bean>
+</beans>
