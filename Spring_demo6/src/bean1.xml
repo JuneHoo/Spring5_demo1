@@ -31,8 +31,10 @@
 <!--        注入数据源-->
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-<!--&lt;!&ndash;    开启事务注解&ndash;&gt;-->
-<!--    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>-->
+<!--    开启事务注解-->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+
+
 
 <!--    配置通知-->
     <tx:advice id="txadvice">
@@ -45,7 +47,7 @@
 <!--    配置切入点和切面-->
     <aop:config>
 <!--        配置切入点-->
-        <aop:pointcut id="pt" expression="execution(* com.atguigu.spring5.service.UserService.*(..))" />
+        <aop:pointcut id="pt" expression="execution(* spring5.service.UserService.*(..))" />
 <!--        配置-->
         <aop:advisor advice-ref="txadvice" pointcut-ref="pt" />
     </aop:config>
